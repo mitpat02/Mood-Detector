@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+Add a script to this file to ask the user to rate their mood from 1 to 10. Then do the following:
+- change "msg" to say "Your Mood: x", where X is the number they entered. 
+- If they enter a number in the range 1 to 3, change the image to "sad.png". If the number is 8-10 change it to "happy.png". Otherwise leave it as is. 
+- Change the href attribute of "msg" so that it links to happy.com, sad.com or neutral.com as appropriate.
+
+Sam Scott, January 2014
+-->
+<html>
+    <head>
+        <title>Mit 991634433 Assignment 1</title>
+        <meta charset="UTF-8">
+    </head>
+    <body style="text-align:center">
+	<img id ="image"  src="https://thakkaha.dev.fast.sheridanc.on.ca/anim.htm?t=neutral">
+		<h1><a id="msg">Waiting...</a></h1>
+		
+		
+		<script>
+		var input = parseInt((prompt("Rate your current mood from 1 to 10")));
+		document.getElementById("msg").innerHTML="Your mood is:" +input;
+		
+		if(input>=1 && input<=3)
+		{
+			document.getElementById("image").src="sad.png";
+			document.getElementById("msg").innerHTML = "SAD FACE";
+			document.getElementById("msg").style.backgroundColor="blue";
+			document.getElementById("msg").href="https://thakkaha.dev.fast.sheridanc.on.ca/anim.htm?t=sad";
+			
+		}
+
+		else if(input>=8 && input<=10)
+		{
+			document.getElementById("image").src="happy.png ";
+			document.getElementById("msg").innerHTML = "HAPPY FACE";
+			document.getElementById("msg").style.backgroundColor="orange";
+			document.getElementById("msg").href="https://thakkaha.dev.fast.sheridanc.on.ca/anim.htm?t=happy ";
+			
+		}
+		else
+		{
+		    document.getElementById("image").src="neutral.png";
+			document.getElementById("msg").innerHTML = "NEUTRAL FACE";
+			document.getElementById("msg").style.backgroundColor="gray";
+			document.getElementById("msg").href="https://thakkaha.dev.fast.sheridanc.on.ca/anim.htm?t=neutral ";
+		   
+		}
+		
+		
+		
+		</script>
+    </body>
+</html>
